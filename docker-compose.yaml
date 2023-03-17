@@ -1,0 +1,11 @@
+version: "3.9"
+
+services:
+  weather-api:
+    build:
+      context: ./
+      dockerfile: Dockerfile
+      target: api
+    # command: tail -f /dev/null  # development
+    ports:
+    - 80:80
