@@ -2,6 +2,19 @@
 Source: https://scool.larc.nasa.gov/lesson_plans/CloudCoverSolarRadiation.pdf (NASA)
 """
 
+# Conversion table for cloud coverage to percentage (average %)
+TO_PERCENTAGE = {
+    1: 0.03,
+    2: 0.125,
+    3: 0.25,
+    4: 0.375,
+    5: 0.5,
+    6: 0.625,
+    7: 0.75,
+    8: 0.875,
+    9: 0.97,
+}
+
 
 def cloudcoverage_to_solarradiation(cloud_coverage: int) -> float:
     """
@@ -12,19 +25,8 @@ def cloudcoverage_to_solarradiation(cloud_coverage: int) -> float:
     Returns:
         solar_radiation: Watts per m2
     """
-    # Conversion table for cloud coverage to percentage (average %)
-    to_percentage = {
-        1: 0.03,
-        2: 0.125,
-        3: 0.25,
-        4: 0.375,
-        5: 0.5,
-        6: 0.625,
-        7: 0.75,
-        8: 0.875,
-        9: 0.97,
-    }
-    cloud_percentage = to_percentage[cloud_coverage]
+
+    cloud_percentage = TO_PERCENTAGE[cloud_coverage]
     # Calculate solar radiation
-    solar_radiation = 990 * (1-0.75*cloud_percentage**3)
+    solar_radiation = 990 * (1 - 0.75 * cloud_percentage**3)
     return solar_radiation
