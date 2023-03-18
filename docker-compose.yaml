@@ -6,6 +6,7 @@ services:
       context: ./
       dockerfile: Dockerfile
       target: api
-    # command: tail -f /dev/null  # development
+    volumes: 
+    - ./:/code
     ports:
     - 80:80

@@ -2,7 +2,7 @@
 Source: https://scool.larc.nasa.gov/lesson_plans/CloudCoverSolarRadiation.pdf (NASA)
 """
 
-# Conversion table for cloud coverage to percentage (average %)
+# Conversion table for cloud coverage response from 7timer to percentage (average %)
 TO_PERCENTAGE = {
     1: 0.03,
     2: 0.125,
