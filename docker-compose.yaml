@@ -6,7 +6,5 @@ services:
       context: ./
       dockerfile: Dockerfile
       target: api
-    volumes: 
-    - ./:/code
     ports:
     - 80:80
